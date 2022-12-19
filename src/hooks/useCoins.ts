@@ -24,8 +24,8 @@ const useCoins = () => {
     try {
       const res = await fetch(COINS_API_URL);
       const data = await res.json();
-      setCoins(data);
-      addStoredCoins(data);
+      setCoins(data.slice(0, 100));
+      addStoredCoins(data.slice(0, 100));
     } catch (e) {
       setIsError(true);
     }

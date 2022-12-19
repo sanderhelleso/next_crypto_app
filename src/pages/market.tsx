@@ -10,7 +10,9 @@ export default function MarketPrices() {
   const renderCoins = useCallback(() => {
     if (!coins) return null;
 
-    return coins.map((coin) => <CoinSimple key={coin.id} {...coin} />);
+    return coins.map((coin, index) => (
+      <CoinSimple key={coin.id} index={index} coin={coin} />
+    ));
   }, [coins]);
 
   return (
@@ -29,7 +31,7 @@ export default function MarketPrices() {
             ? 'Unable to fetch coins...'
             : `Showing ${coins.length} coins`}
         </p>
-        <div>{renderCoins()}</div>
+        <div className='grid grid-cols-3 gap-3 py-8'>{renderCoins()}</div>
       </div>
     </Layout>
   );
