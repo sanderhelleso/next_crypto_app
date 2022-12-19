@@ -12,8 +12,10 @@ const useCoin = () => {
   const [isError, setIsError] = useState<boolean>(false);
 
   useEffect(() => {
+    if (!id) return;
+
     loadCoin();
-  }, []);
+  }, [id]);
 
   async function loadCoin() {
     setIsLoading(true);
@@ -23,6 +25,7 @@ const useCoin = () => {
       const data = await res.json();
 
       const coin: ICoinInfo = {
+        id: data.id,
         name: data.name,
         price: data.market_data.current_price['usd'],
       };
