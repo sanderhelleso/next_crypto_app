@@ -24,8 +24,9 @@ const useCoins = () => {
     try {
       const res = await fetch(COINS_API_URL);
       const data = await res.json();
-      setCoins(data.slice(0, 100));
-      addStoredCoins(data.slice(0, 100));
+      const coinsToShow = data.slice(0, 100); // just to load faster for the example as we don't do any paginating
+      setCoins(coinsToShow);
+      addStoredCoins(coinsToShow);
     } catch (e) {
       setIsError(true);
     }
