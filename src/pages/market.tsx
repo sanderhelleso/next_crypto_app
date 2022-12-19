@@ -16,9 +16,7 @@ export default function MarketPrices() {
   }, [coins]);
 
   return (
-    <Layout
-      title={'Market Prices'}
-      description={'Market prices of the crypto market'}>
+    <Layout title={'Coins'} description={'Market prices of the crypto market'}>
       <div
         className={`${
           !coinsDisplayed ? '' : 'mt-32'

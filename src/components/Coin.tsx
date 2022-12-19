@@ -20,7 +20,7 @@ const Coin: FunctionComponent<ICoinInfo> = (props) => {
               alt={'Logo'}
               height={50}
               width={50}
-              className='max-h-[50px] max-w-[50px] rounded-full border-2'
+              className='rounded-full border-2'
             />
           )}
         </div>
